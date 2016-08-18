@@ -1,0 +1,482 @@
+html,body{
+	height: 100%;
+}
+
+.wrap{
+	height:100%;
+
+}
+.left{
+	float:left;
+	width:16.67%;
+	height:100%;
+	background-color:#6ecadc;
+	color:#FFF;
+	padding: 4.267% 2.267%;
+	box-sizing:border-box;
+	-webkit-transition: width .5s;
+	-o-transition: width .5s;
+	transition: width .5s;
+	-moz-transition:width .5s;
+	-ms-transition: width .5s;
+}
+.left div{
+	float: left;
+	width:100%;
+}
+.left h1{
+	margin-bottom: 15%;
+	font-size: 3.6rem;
+}
+.left img{
+	width: 100%;
+	padding: 16px;
+	border:1px solid #FFF;
+	box-sizing: border-box;
+}
+.left dl{
+	width:100%;
+	float:left;
+	overflow:hidden;
+}
+.left dt{
+	margin-top: 30px;
+	font-size:1.8rem;
+}
+.left dd{
+	font-size:1.4rem;
+	color:#333;
+}
+/******左边响应式部分******/
+@media screen and (max-width: 1365px) {
+	.wrap .left h1{
+		font-size: 2.6rem;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.wrap .left {
+		width:20%;
+		padding:3.125% 1.66%;
+	}	
+
+	.wrap .right{
+		width: 80%;
+	}
+	.wrap .right .webView .view{
+		padding-top: 70.03561356299772%;
+	}
+	.right #inner img{
+		margin: 10% 0 15%;
+	}
+	.wrap #inner dl{
+		margin-top: 10%;
+	}	
+}
+@media screen and (max-width: 750px) {
+	.wrap .left{
+		width:100%;
+		height: auto;
+	}
+	.wrap .left div{
+		width:28%;
+	}
+	.wrap .left div img{
+		padding: 8px;
+	}	
+	.wrap .left dl{
+		float: right;
+		width:28%;
+		margin-top: 5%;
+	}
+	.left dl dt{
+		margin-top: 14.777%;
+	}
+	.wrap .right{
+		width: 100%;
+		height: auto;
+		overflow: auto;
+	}
+	.wrap .right>div h3{
+		width: 280px;
+		margin-bottom: 12px;
+	}	
+	.wrap .right>div ul li .details{
+		margin-top: 12px;
+	}
+	.wrap .right>div ul li{
+		margin-bottom: 12px;
+	}
+    .wrap .right .Professional .skills{
+    	margin-top: 12px;
+    }	
+}
+@media screen and (max-width: 640px) {
+	.left dl dt{
+		font-size:2rem;
+		margin-top: 12.777%;
+	}	
+	.left dl dd{
+		font-size:1.8rem;
+	}
+	.wrap .right>div h3{
+		width: 260px;
+	}		
+}
+@media screen and (max-width: 590px){
+	.wrap .right>div h3{
+		width: 200px;
+	}	
+}
+@media screen and (max-width: 414px) {
+	.left dl dt{
+		font-size:2rem;
+		margin-top: 10%;
+	}	
+	.wrap .right .nav li{
+		padding: 0 8px;
+	}
+	.wrap .right>div h3{
+		width: 180px;
+	}	
+	 .right .skills  dl{
+		margin-right: 15%;
+	}
+}
+@media screen and (max-width: 375px){
+	.wrap .right>div h3{
+		width: 140px;
+	}	
+	.wrap .right .nav li{
+		padding: 0 4px;
+	}	
+	 .right .skills  dl{
+		margin-right: 15%;
+	}	
+	 .wrap .right .skills  dd{
+		margin-left: 20px;
+	}	
+}
+@media screen and (max-width: 320px){
+	 .wrap .right .skills  dd{
+		margin-left: 15px;
+	}	
+}
+.right{
+	float: left;
+	width:83.3%;
+	height: 100%;
+	transition: all .5s;
+	padding: 4.267% 0;
+	box-sizing: border-box;
+	overflow-y:scroll;
+}
+.right .nav{
+	margin:0 2.267% 4.267%;
+}
+.right .nav li{
+	float: left;
+	padding: 0 16px;
+	font-size: 1.8rem
+}
+.right .nav li i{
+	margin-right: 10px;
+	color:#6ecadc;
+}
+.right .nav li a{
+	color:#333333;
+	transition: width .2s;
+	-webkit-transition: width .2s;
+	-o-transition: width .2s;
+	-moz-transition: width .2s;
+	-ms-transition: width .2s;
+}
+.right .nav li a:hover{
+	color:#6ecadc;
+	text-decoration:underline;
+}
+
+.right>div h3{
+	width: 320px;
+	padding: 5px 0 5px 30px;
+	color:#FFF;
+	font-size:2.4rem;
+	font-weight: 500;
+	margin-bottom: 24px;
+}
+.right .Employment h3{
+	background-color:#6ecadc;
+}
+.right>div ul li{
+	padding-bottom: 20px;
+	margin:0 30px 24px;
+}
+.right>div ul .odd{
+	border-bottom:3px dashed #999;
+}
+
+.right>div ul li p strong{
+	font-size: 2.4rem;
+	margin-right: 10px;
+	color: #333;
+
+}
+.right>div ul li p span{
+	font-size:1.6rem;
+	color:#999;
+}
+.right>div ul li em{
+	font-size:1.4rem;
+	color:black;
+}
+.right>div ul li .details{
+	margin-top: 24px;
+}
+.right>div .details{
+	font-size: 1.8rem;
+	color:#999;
+}
+.right .Professional{
+	margin-bottom: 24px;
+}
+.right .Professional h3{
+	background-color: #e9a820;
+}
+.right .Professional .details{
+	margin:0 30px;
+}
+.right .Professional .skills{
+	margin:24px 30px 0;
+}
+ .skills dl{
+	float: left;
+	margin-right: 30%;
+
+}
+.right .skills .last{
+	margin-right: 0;
+}
+.right .skills dt{
+	font-size:2rem;
+	margin-bottom: 1rem;
+}
+.right .skills dd{
+	margin-left: 30px;
+	font-size:1.6rem;
+}
+.right .Education h3{
+	background-color: #3eb991;
+}
+.right .container{
+	-webkit-transition:opacity .5s ;
+	-o-transition:opacity .5s ;
+	transition:opacity .5s ;
+	-moz-transition:opacity .5s ;
+	-ms-transition:opacity .5s ;
+}
+/**********作品展示页导航栏********/
+.right .webView .navPrograme{
+	background-color: #2EA7E0;
+}
+.right .webView .navPrograme li{
+	float: left;
+	margin:0;
+	padding:10px 0;
+	width:20%;
+	box-sizing: border-box;
+	text-align: center;
+	font-size:1.4rem;
+}
+.right .webView .navPrograme .long{
+	width:30%;
+}
+.right .webView .navPrograme li:hover{
+	-webkit-box-shadow:0 0 5px #2EA7E0;
+	-o-box-shadow:0 0 5px #2EA7E0;
+	-moz-box-shadow:0 0 5px #2EA7E0;
+	-ms-box-shadow:0 0 5px #2EA7E0;
+	box-shadow:0 0 5px #2EA7E0;
+}
+.right .webView .navPrograme li a{
+	color:#F2F2F2;
+	display: block;
+	height: 100%;
+}
+.right .webView .navPrograme li:hover a{
+	color: #FFF;
+}
+/***angular会变化********/
+.right .content{
+	-webkit-transition:  left .5s;
+	-o-transition:  left .5s;
+	-moz-transition:  left .5s;
+	-ms-transition:  left .5s;
+	transition:  left .5s;
+}
+.right .webView .view{
+	position: relative;
+	padding-top:50.5%;
+	overflow: hidden;
+}	
+ .content{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.right .webView .content>div{
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+}
+.content.ng-enter{
+	left: 100%;
+}
+.content.ng-enter-active{
+	left: 0%;
+}
+.content.ng-leave{
+	left: 0%;
+}
+.content.ng-leave-active{
+	left: -100%;
+}
+/*******作品第一页********/
+#inner{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 400%;
+	height: 100%;
+	-webkit-transition: left .5s;
+	-o-transition: left .5s;
+	transition: left .5s;
+	-moz-transition: left .5s;
+	-ms-transition: left .5s;
+}
+#inner .slide{
+	width: 25%;
+	height: 100%;
+	float: left;
+}
+.pagination {
+	position:absolute;
+	bottom: 0;
+	left:0;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+}
+ .pagination span{
+	display: inline-block;
+	background-color: #8e8e8e;
+	width: 10px;
+	height: 10px;
+	border-radius:50%;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.pagination .active{
+	background-color: #e9a820;
+}
+#inner img{
+	float: left;
+	width:60%;
+	cursor: pointer;
+	margin:5% 0;
+}
+#inner dl{
+	float: left;
+	margin-top: 5%;
+	width: 34%;
+	padding:0 3%;
+}
+#inner dl dt{
+	font-size: 2.4rem;
+	border-left: 5px solid #2EA7E0;
+	text-indent: 10px;
+	margin-bottom: 20px;
+}
+#inner dl dd h4{
+	color:#555;
+	font-size:1.6rem;
+	font-weight: 500;
+}
+#inner dl dd p{
+	text-indent: 15px;
+	color:#777;
+	font-size:1.4rem;
+}
+/******字体大小变化****/
+@media screen and (max-width: 640px){
+	html,body{
+		font-size:8.533333333333334px;
+	}
+}
+@media screen and (max-width: 590px){
+	html,body{
+		font-size:7.866666666666666px;
+	}
+}
+@media screen and (max-width: 540px){
+	html,body{
+		font-size:7.2px;
+	}
+}
+@media screen and (max-width: 500px){
+	html,body{
+		font-size:6.666666666666666px;
+	}
+}
+@media screen and (max-width: 414px){
+	html,body{
+		font-size:5.52px;
+	}
+}
+@media screen and (max-width: 375px){
+	html,body{
+		font-size:5px;
+	}
+}
+@media screen and (max-width: 320px){
+	html,body{
+		font-size:4.266666666666667px;
+	}
+}
+/****自定义字体部分*****/
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1471346897'); /* IE9*/
+  src: url('iconfont.eot?t=1471346897#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1471346897') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1471346897') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1471346897#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-survey:before { content: "\e74e"; }
+.icon-email:before { content: "\e69f"; }
+.icon-pic:before { content: "\e6a8"; }
+.icon-dayinji:before { content: "\e623"; }
+
+
+/*******AngularJS动画部分****/
+.container.ng-enter{
+	opacity: 0;
+}
+.container.ng-enter-active{
+	opacity: 1;
+}  
+.container.ng-leave{
+	opacity: 1;
+}  
+.container.ng-leave-active{
+	opacity: 0;
+}  
