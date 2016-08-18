@@ -124,8 +124,44 @@ html,body{
 }
 @media screen and (max-width: 590px){
 	.wrap .right>div h3{
-		width: 200px;
+		width: 200px; 
 	}	
+	.wrap .right .webView .view{
+		padding-top: 62.5%;
+	}	
+	.right #inner img{
+		margin: 5% 0 15%;
+	}
+	.wrap #inner dl{
+		margin-top: 5%;
+	}			
+}
+@media screen and (max-width: 490px){
+	.wrap .right .webView .view{
+		padding-top: 62.5%;
+	}	
+	.right #inner img{
+		margin: 2% 0 20%;
+	}
+	.wrap #inner dl{
+		margin-top: 2%;
+	}	
+	.wrap #inner dt{
+		margin-bottom: 5px;
+	}				
+}
+@media screen and (max-width: 460px){
+	.right #inner dl{
+		height: 100%;
+		margin-top: 0%;
+		overflow-y:scroll;
+	}		
+	.wrap #inner dt{
+		margin-top: 2%;
+	}	
+	.right #inner img{
+		margin: 11% 0 11%;
+	}		
 }
 @media screen and (max-width: 414px) {
 	.left dl dt{
@@ -316,6 +352,11 @@ html,body{
 	position: relative;
 	padding-top:50.5%;
 	overflow: hidden;
+	user-select:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-o-user-select:none;
+	-ms-user-select:none;
 }	
  .content{
 	position: absolute;
@@ -386,6 +427,14 @@ html,body{
 	cursor: pointer;
 	margin:5% 0;
 }
+#inner .slider2 img{
+	float: left;
+	width:40%;
+	margin:0 10%;
+}
+#inner .slider2{
+	overflow-y:scroll;
+}
 #inner dl{
 	float: left;
 	margin-top: 5%;
@@ -407,6 +456,33 @@ html,body{
 	text-indent: 15px;
 	color:#777;
 	font-size:1.4rem;
+}
+.footer{
+	margin-top: 20px;
+	border-top: 2px solid #2EA7E0;
+	text-align: center;
+}
+.footer{
+	font-size: 2rem;
+	padding-top: 10px;
+}
+.footer em{
+	color:#999;
+}
+.footer a{
+	color:#6ECADC;
+}
+.footer a:link{
+	color:#6ECADC;
+}
+.footer a:visited{
+	color:#A59ED5;
+}
+.footer a:hover{
+	color:#A3E22D;
+}
+.footer a:active{
+	color:#7CCEF6;
 }
 /******字体大小变化****/
 @media screen and (max-width: 640px){
@@ -480,3 +556,18 @@ html,body{
 .container.ng-leave-active{
 	opacity: 0;
 }  
+
+
+
+.webView.ng-enter{
+	opacity: 0;
+}
+.webView.ng-enter-active{
+	opacity: 1;
+}  
+.webView.ng-leave{
+	opacity: 1;
+}  
+.webView.ng-leave-active{
+	opacity: 0;
+}

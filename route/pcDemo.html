@@ -1,9 +1,9 @@
 <div style="">
 	<div id="inner" class="clearfix" ng-style="{left:-activeIndex*100+'%'}">
-		<div class="slide clearfix" ng-repeat="list in lists"  ng-swipe-left="next($event)" ng-swipe-right="last()">
-			<img src="{{list}}">
+		<div class="slide clearfix" ng-repeat="list in lists"  ng-swipe-left="next()" ng-swipe-right="last()">
+			<img src="{{list.src}}">
 			<dl>
-				<dt>页面简介</dt>
+				<dt>{{list.title}}</dt>
 				<dd>
 					<h4>主要功能</h4>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>

@@ -9,41 +9,41 @@
     <script type="text/javascript" src="./js/angular-route.min.js"></script>
     <script type="text/javascript" src="./js/angular-animate.min.js"></script>
     <script type="text/javascript" src="./js/angular-touch.min.js"></script>
-	<title>Document</title>
+	<title>简历</title>
 </head>
 <body>
 	<div class="wrap clearfix" id="wrap" ng-controller="myCtrl">
 		<div class="left">
 			<div class="personal clearfix">
-				<h1>USER Name</h1>
+				<h1>麦豪欢</h1>
 				<img src="./img/avt.png">
 			</div>
 			<dl class="clearfix">
-				<dt>PHONE</dt>
-				<dd>132146465</dd>
-				<dt>Email</dt>
-				<dd>651541d6556</dd>
-				<dt>ADDRESS</dt>
-				<dd>sadhosai</dd>
+				<dt>电话</dt>
+				<dd>13544339312</dd>
+				<dt>年龄</dt>
+				<dd>26</dd>
+				<dt>现居</dt>
+				<dd>广东广州</dd>
 			</dl>
 		</div>
 		<div class="right">
 			<ul class="nav clearfix">
-				<li><i class="icon iconfont">&#xe74e;</i><a href="javascript:void(0)" ng-click="turnCV()">Resume</a></li>
-				<li><i class="icon iconfont">&#xe623;</i><a href="javascript:void(0)">Print CV</a></li>
-				<li><i class="icon iconfont">&#xe69f;</i><a href="javascript:void(0)">Email</a></li>
-				<li><i class="icon iconfont">&#xe6a8;</i><a href="javascript:void(0)"  ng-click="turnView()">View</a></li>
+				<li><i class="icon iconfont">&#xe74e;</i><a href="javascript:void(0)" ng-click="turnCV()">简历</a></li>
+				<li><i class="icon iconfont">&#xe623;</i><a href="javascript:void(0)">简历</a></li>
+				<li><i class="icon iconfont">&#xe69f;</i><a href="javascript:void(0)">邮箱</a></li>
+				<li><i class="icon iconfont">&#xe6a8;</i><a href="javascript:void(0)"  ng-click="turnView()">作品</a></li>
 			</ul>
 			<div class="container" ng-if="toggleCV">
 				<div class="Employment">
-					<h3>Previous Employment</h3>
+					<h3>工作经历</h3>
 					<ul>
 						<li class="odd">
 							<p>
-								<strong>Company Name</strong>
-								<span>JUNE 2015-PRESENT</span>
+								<strong>广东奔霸王光电</strong>
+								<span>2015年7月</span>
 							</p>
-							<em>WEB DESIGNER</em>
+							<em>网络管理/网页维护</em>
 							<p class="details">Nulla volutpat at est sed ultricies. In ac sem consequat, posuere nulla varius, molestie lorem. Duis quis nibh leo. Curabitur a quam eu mi convallis auctor nec id mauris. Nullam mattis turpis eu turpis tincidunt, et pellentesque leo imperdiet. Vivamus malesuada, sem laoreet dictum pulvinar, orci lectus rhoncus sapien, ut consectetur augue nibh in neque. In tincidunt sed enim et tincidunt.</p>
 						</li>
 						<li class="">
@@ -98,7 +98,7 @@
 					</ul>
 				</div>
 			</div>			
-			<div class="webView">
+			<div class="webView" ng-if="toggleView">
 				<ul class="navPrograme clearfix">
 					<li>
 						<a href="#/">PC端项目</a>
@@ -115,9 +115,12 @@
 				</ul>
 				<div class="view" >
 					<div class="content" id="content" ng-view >
-						
 					</div>
 				</div>
+				<p class="footer">
+					<em>项目地址:</em>
+					<a href="https://www.baidu.com/" target="_blank">地址</a>
+				</p>
 			</div>
 		</div>
 	</div>
