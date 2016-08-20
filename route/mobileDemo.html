@@ -4,17 +4,9 @@
 			<img src="{{list.src}}">
 			<dl>
 				<dt>{{list.title}}</dt>
-				<dd>
-					<h4>主要功能</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-				</dd>	
-				<dd>
-					<h4>主要功能</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-				</dd>	
-				<dd>
-					<h4>主要功能</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+				<dd ng-repeat=" con in data[activeIndex]">
+					<h4>{{con.title}}</h4>
+					<p>{{con.details}}</p>
 				</dd>									
 			</dl>
 		</div>

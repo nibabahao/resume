@@ -13,24 +13,26 @@
 </head>
 <body>
 	<div class="wrap clearfix" id="wrap" ng-controller="myCtrl">
+		<!-- 简历左部基本信息 -->
 		<div class="left">
 			<div class="personal clearfix">
 				<h1>麦豪欢</h1>
 				<img src="./img/avt.png">
 			</div>
 			<dl class="clearfix">
-				<dt>电话</dt>
-				<dd>13544339312</dd>
-				<dt>年龄</dt>
-				<dd>26</dd>
-				<dt>现居</dt>
-				<dd>广东广州</dd>
+				<dt class="clearfix"><span>电话</span><span>学历</span></dt>
+				<dd class="clearfix"><span>13544339312</span><span>大专</span></dd>
+				<dt class="clearfix"><span>年龄</span><span>现居</span></dt>
+				<dd class="clearfix"><span>26</span><span>广州</span></dd>
+				<dt class="clearfix">邮箱</dt>
+				<dd class="clearfix">506712534@qq.com</dd>
 			</dl>
 		</div>
+		<!-- 简历右边详细信息 -->
 		<div class="right">
 			<ul class="nav clearfix">
 				<li><i class="icon iconfont">&#xe74e;</i><a href="javascript:void(0)" ng-click="turnCV()">简历</a></li>
-				<li><i class="icon iconfont">&#xe623;</i><a href="javascript:void(0)">简历</a></li>
+				<li><i class="icon iconfont">&#xe623;</i><a href="javascript:void(0)">打印</a></li>
 				<li><i class="icon iconfont">&#xe69f;</i><a href="javascript:void(0)">邮箱</a></li>
 				<li><i class="icon iconfont">&#xe6a8;</i><a href="javascript:void(0)"  ng-click="turnView()">作品</a></li>
 			</ul>
@@ -40,77 +42,116 @@
 					<ul>
 						<li class="odd">
 							<p>
-								<strong>广东奔霸王光电</strong>
-								<span>2015年7月</span>
+								<strong>广州科正网络公司</strong>
+								<span>2015年8月~至今</span>
 							</p>
-							<em>网络管理/网页维护</em>
-							<p class="details">Nulla volutpat at est sed ultricies. In ac sem consequat, posuere nulla varius, molestie lorem. Duis quis nibh leo. Curabitur a quam eu mi convallis auctor nec id mauris. Nullam mattis turpis eu turpis tincidunt, et pellentesque leo imperdiet. Vivamus malesuada, sem laoreet dictum pulvinar, orci lectus rhoncus sapien, ut consectetur augue nibh in neque. In tincidunt sed enim et tincidunt.</p>
+							<em>Web前端工程师</em>
+							<p class="details">科正网络是一家主要提供网站建设手机APP开发的互联网公司。<br/>主要负责:<br/>1.负责PC端、移动端网站、html5前端页面开发<br/>2.负责用PS切图工作根据UI设计稿精确实现html页面效果和Js动态效果<br/>3.根据后台接口用ajax套用数据，与后台交互开发<br/>4根据要求调整、修改优化页面、兼容目前主流网站<br/>5.用HTML5、CSS3响应式布局开发移动端web页面</p>
 						</li>
 						<li class="">
 							<p>
-								<strong>Company Name</strong>
-								<span>JUNE 2015-PRESENT</span>
+								<strong>广东奔霸王光电公司</strong>
+								<span>2015年2月~2015年7月</span>
 							</p>
-							<em>WEB DESIGNER</em>
-							<p class="details">Nulla volutpat at est sed ultricies. In ac sem consequat, posuere nulla varius, molestie lorem. Duis quis nibh leo. Curabitur a quam eu mi convallis auctor nec id mauris. Nullam mattis turpis eu turpis tincidunt, et pellentesque leo imperdiet. Vivamus malesuada, sem laoreet dictum pulvinar, orci lectus rhoncus sapien, ut consectetur augue nibh in neque. In tincidunt sed enim et tincidunt.</p>
+							<em>网络管理/网页维护</em>
+							<p class="details">主要负责:公司首页编辑改善维护，设置网站上的产品显示和编辑公司动态消息，还有公司网络管理、软件的维护、电脑设备维护、网络维护、网络配置、网站更新等。</p>							
 						</li>					
 					</ul>
 				</div>
 				<div class="Professional">
-					<h3>Professional skills</h3>
-					<p class="details">Duis egestas tortor metus, vitae venenatis tortor tristique at. Pellentesque dignissim purus vitae enim blandit, sed tristique enim malesuada. Maecenas dolor erat, volutpat a tellus eu, euismod iaculis urna. Nulla dui purus, viverra viverra dolor non, malesuada dictum purus.</p>
+					<h3>专业技能</h3>
+					<p class="details">
+						1.熟练使用div+css布局，符合w3c标准，能够编写符合语义化页面<br/>
+						2.熟悉并兼容各主流浏览器兼容性问题，PS切图等<br/>
+						3.熟悉HTML5+CSS3新特性，新标签和动画等<br/>
+						4.能够熟练作编写应式布局以及移动端webapp页面<br/>
+						5.熟练使用原生JS作常见的网页动态动画效果<br/>
+						6.熟练使用jquery/zepto的JS框架<br/>
+						7.熟悉UI框架bootstrap<br/>
+						8.掌握常用插件swiper.js、touch.js、gsp动画插件<br/>
+						9.熟悉canvas，能用canvas做动画和小游戏<br/>
+						10.了解php后台语言能对数据库做基本增删改查操作，编写简单API接口<br/>
+						11.熟悉ajax和jsonp操作数据接口<br/>
+						12.了解node.js能利用express快速搭建服务器页面了解jade模板<br/>
+						13.了解 MVC框架angular.js了解基本指令，路由等做单页应用动态效果<br/>
+						14.熟悉常用的代码管理git和svn<br/>
+					</p>
 					<div class="skills clearfix">
 						<dl>
-							<dt>Software</dt>
-							<dd>Photoshop</dd>
-							<dd>Flash</dd>
+							<dt>常用工具</dt>
+							<dd>Sublime Text</dd>
+							<dd>HBuilder</dd>
 							<dd>Dreemweeaver</dd>
-							<dd>In design</dd>
 						</dl>
 						<dl class="last">
-							<dt>Languages</dt>
-							<dd>Photoshop</dd>
-							<dd>Flash</dd>
-							<dd>Dreemweeaver</dd>
-							<dd>In design</dd>
-						</dl>					
+							<dt>编程语言</dt>
+							<dd>HTML5/CSS3</dd>
+							<dd>Javascript</dd>
+							<dd>PHP</dd>
+						</dl>		 			
 					</div>
 				</div>
 				<div class="Education">
-					<h3>Education</h3>
+					<h3>项目经历</h3>
 					<ul>
 						<li class="odd">
 							<p>
-								<strong>Company Name</strong>
-								<span>JUNE 2015-PRESENT</span>
+								<strong>精英吧</strong>
 							</p>
-							<em>WEB DESIGNER</em>
-							<p class="details">Nulla volutpat at est sed ultricies. In ac sem consequat, posuere nulla varius, molestie lorem. Duis quis nibh leo. Curabitur a quam eu mi convallis auctor nec id mauris. Nullam mattis turpis eu turpis tincidunt, et pellentesque leo imperdiet. Vivamus malesuada, sem laoreet dictum pulvinar, orci lectus rhoncus sapien, ut consectetur augue nibh in neque. In tincidunt sed enim et tincidunt.</p>
+							<em>pc整站开发</em>
+							<p class="details">项目描述:&nbsp;精英吧是一个在线上教育的互联网IT技能学习网站为在校学生、职场白领提供了一个迅速提升技能、共同分享进步的学习平台。<br/>
+							项目职责:<br/>
+							1.按照页面需求创建项目路径目录<br/>
+							2.编写主页导航栏，底部栏公用部分以及列表页详细页<br/>
+							3.通过ajax调用后台数据接口api并把数据响应填充到列表页详细页<br/>
+							4.公用js效果编写封装好以便调用和维护<br/>
+							5.修复bug兼容IE8、chrome、firefox、safari等主流浏览器<br/>
+							6.使用git/svn代码管理工具上传代码<br/>
+							</p>
+						</li>
+						<li class="odd">
+							<p>
+								<strong>生活一家</strong>
+							</p>
+							<em>H5移动端开发</em>
+							<p class="details">项目描述:&nbsp;生活一家是一款集娱乐信息，便民服务和在线销售家电、数码、百货、生活食品、生活用品、家居于一体的网络购物商城移动网站。<br/>
+							项目职责:<br/>
+							1.按设计稿切图利用H5、CSS3负责整站页面编写<br/>
+							2.用百分比布局针对不同手机分辨率的不同而做网页兼容<br/>
+							3.登录页面账号密码表单正则表达式验证后再与后台数据交互验证<br/>
+							4.js动态效果如轮播图、弹窗蒙层、tab页面切换、上传图片、头像更改等<br/>
+							5.修复移动端页面的bug及优化其性能<br/>
+							</p>
 						</li>
 						<li class="">
 							<p>
-								<strong>Company Name</strong>
-								<span>JUNE 2015-PRESENT</span>
+								<strong>爱心鱼</strong>
 							</p>
-							<em>WEB DESIGNER</em>
-							<p class="details">Nulla volutpat at est sed ultricies. In ac sem consequat, posuere nulla varius, molestie lorem. Duis quis nibh leo. Curabitur a quam eu mi convallis auctor nec id mauris. Nullam mattis turpis eu turpis tincidunt, et pellentesque leo imperdiet. Vivamus malesuada, sem laoreet dictum pulvinar, orci lectus rhoncus sapien, ut consectetur augue nibh in neque. In tincidunt sed enim et tincidunt.</p>
-						</li>					
+							<em>H5小游戏</em>
+							<p class="details">项目描述:&nbsp;爱心鱼是一款利用H5下的canvas绘制的移动端微信小游戏<br/>
+							项目职责:<br/>
+							1.利用canvas和面向对象做出鱼的动画<br/>
+							2.用图片预加载方式使整个游戏加载一次后即可，加强用户体验<br/>
+							3.运用canvas绘图api实现鱼吃果实的特效<br/>
+							4.利用计时器倒数实现游戏时间变化<br/>
+							</p>
+						</li>											
 					</ul>
 				</div>
 			</div>			
 			<div class="webView" ng-if="toggleView">
 				<ul class="navPrograme clearfix">
 					<li>
-						<a href="#/">PC端项目</a>
+						<a href="#/" ng-click="address(0)">PC端项目</a>
 					</li>
 					<li>
-						<a href="#/mobile">移动端项目</a>
+						<a href="#/mobile" ng-click="address(1)">移动端项目</a>
 					</li>
 					<li class="long">
-						<a href="#/h5">H5 canvas游戏</a>
+						<a href="#/h5" ng-click="address(2)">H5 canvas游戏</a>
 					</li>	
 					<li class="long">
-						<a href="#/other">PHP/nodeJS作品</a>
+						<a href="#/other" ng-click="address(3)">PHP/nodeJS作品</a>
 					</li>														
 				</ul>
 				<div class="view" >
@@ -119,7 +160,7 @@
 				</div>
 				<p class="footer">
 					<em>项目地址:</em>
-					<a href="https://www.baidu.com/" target="_blank">地址</a>
+					<a href="{{link[linkIndex]}}" target="_blank">{{link[linkIndex]}}</a>
 				</p>
 			</div>
 		</div>

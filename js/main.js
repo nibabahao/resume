@@ -21,12 +21,13 @@ function imgLoad(){
 }
 imgLoad();
 }
-
+/****创建angularJS应用****/
 var myapp=angular.module("myapp",["ngRoute","ngAnimate","ngTouch"]);
 
+/*****创建主控制器***/
 myapp.controller("myCtrl",function($scope){
-	$scope.toggleCV=true;
-	$scope.toggleView=false;
+	$scope.toggleCV=true;//控制简历页的标记
+	$scope.toggleView=false;//控制作品页的标记
 	$scope.turnCV=function(){
 		$scope.toggleCV=true;
 		$scope.toggleView=false;
@@ -35,7 +36,16 @@ myapp.controller("myCtrl",function($scope){
 		$scope.toggleCV=false;
 		$scope.toggleView=true;
 	}
+	//更改地址
+	$scope.linkIndex=0;
+	$scope.link=["http://www.jingyingba.com/","https://nibabahao.github.io/lifeFamily/","https://nibabahao.github.io/heartFish/",""];
+	$scope.address=function(index){
+		$scope.linkIndex=index;
+		console.log(index);
+	}
 });
+
+/****配置路由将作品多页HTML生成单页****/
 
 myapp.config(function($routeProvider){
 	$routeProvider.when("/",{
@@ -55,9 +65,22 @@ myapp.config(function($routeProvider){
 	})	
 });
 
+/******第一页控制器****/
 myapp.controller("indexCtrl",function($scope){
+	/****创建内容数据****/
 	$scope.lists=[{"src":"./img/home1.png","title":"主页简介"},{"src":"./img/list.png","title":"列表页简介"},{"src":"./img/details.png","title":"详情页简介"},{"src":"./img/login.png","title":"登陆页简介"}];
-	$scope.activeIndex=0;
+	$scope.content0=[{"title":"页面布局","details":"采用固定像素分上中下静态布局，而顶部导航栏和底部友情链接都作为公共部分提取以供不同页面调用"},
+	{"title":"轮播图效果","details":"利用jquery里面的动画函数fadeIn和fadeOut配合，实现图片切换时的淡入淡出效果"},{"title":"回顶部按钮",
+"details":"当鼠标移入右下角的图标用hover效果会出现大图，利用jquery的anmiate改变页面的scrollTo而实现带有动画效果的返回顶部同时也兼容firefox"}];
+	$scope.content1=[{"title":"中间课程内容","details":"利用ajax调用后台接口api处理json格式数据，再将数据对应填充到页面上展示出来"},
+	{"title":"分类导航部分","details":"将ajax返回的数据内容按照导航栏标题的分类并保存在数组中，当tab切换时在页面上只显示对应内容，好处只用一次ajax请求，所以只加载一次，减少http请求次数"},{"title":"页面和总共数量",
+"details":"会根据返回来数据的条数生成，限制每页只显示20条"}];
+	$scope.content2=[{"title":"内容替换","details":"根据列表页传输过来的id判断再从数据库中查找对应id数据填充上去"},
+	{"title":"热销课程","details":"利用PHP操作数据库查找销量最好的排序后引入页面"}];
+	$scope.content3=[{"title":"表单验证","details":"在数据传到后台时先在用正则把内容判断检测"},
+	{"title":"后台数据交互","details":"利用ajax调用后台验证账号密码接口，根据返回信息判断登录是否成功 "}];
+	$scope.data=[$scope.content0,$scope.content1,$scope.content2,$scope.content3];
+	$scope.activeIndex=0;//控制内容页面的标记位置
 	$scope.tab=function(index){
 		$scope.activeIndex=index;
 	}
@@ -77,6 +100,15 @@ myapp.controller("indexCtrl",function($scope){
 myapp.controller("mobileCtrl",function($scope){
 	$scope.lists=[{"src":"./img/main.png","title":"主页简介"},{"src":"./img/shopping.png","title":"购物页简介"},{"src":"./img/mine.png","title":"我的页面简介"}];
 	$scope.activeIndex=0;
+$scope.content0=[{"title":"整体布局","details":"用百分比布局以便适应不同手机的分辨率"},
+	{"title":"轮播图效果","details":"由于手机上性能问题，用原生和jq写出来动画效果会不流畅，所有可以用swiper.js减少性能消耗优化动画"},{"title":"公用部分",
+"details":"，头部和底部都为公用部分提取，都采用固定定位定格在头和尾部"}];
+$scope.content1=[{"title":"遮盖层","details":"开始以蒙层和弹窗的方式引导用户现在最新的优惠，触屏蒙层部分弹窗消失"},
+	{"title":"内容详情","details":"内容分两部分，介绍商品用png压缩图片体积少不失真加文字内容展示，评价页用tab切换来显示不同部分，减少页面嵌套"},{"title":"商品限时",
+"details":"采用计时器设定好限时时间来"}];		
+$scope.content2=[{"title":"我的首页","details":"每个li按钮都对应不同页面以便用户修改个人信息"},
+	{"title":"登录","details":"在跳到我的页面之前，会有一个登录注册页面"}];		
+$scope.data=[$scope.content0,$scope.content1,$scope.content2];
 	$scope.tab=function(index){
 		$scope.activeIndex=index;
 	}
@@ -94,8 +126,15 @@ myapp.controller("mobileCtrl",function($scope){
 	}	
 });
 myapp.controller("otherCtrl",function($scope){
-	$scope.lists=[{"src":"./img/nodejs.png","title":"nodejs搭建页面"},{"src":"./img/php.png","title":"php搭建列表页"},{"src":"./img/php2.png","title":"php2搭建详细页"}];
+	$scope.lists=[{"src":"./img/nodejs.png","title":"nodejs搭建页面"},{"src":"./img/php.png","title":"php搭建列表页"},{"src":"./img/php2.png","title":"php搭建详细页"}];
 	$scope.activeIndex=0;
+$scope.content0=[{"title":"服务器搭建","details":"用nodeJS中的express快速搭建整个应用"},
+	{"title":"jade模板","details":"设置jade模板用来接受接口的数据和逐一填充上去"},{"title":"调用接口",
+"details":"利用request模块去接受网络上豆瓣的接口并保存豆瓣的数据"}];
+$scope.content1=[{"title":"PHP解析接口","details":"用file_get_contents获取豆瓣的接口变解析成json对象后导入数据库"},
+	{"title":"数据填充","details":"在模板页面上从数据库里填充数据完成列表页面"}];		
+$scope.content2=[{"title":"详情页的填充","details":"根据列表页传输过来的ID再从数据库找到对应ID的数据填充到页面上"}];		
+$scope.data=[$scope.content0,$scope.content1,$scope.content2];	
 	$scope.tab=function(index){
 		$scope.activeIndex=index;
 	}
