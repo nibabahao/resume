@@ -36,6 +36,12 @@ myapp.controller("myCtrl",function($scope){
 		$scope.toggleCV=false;
 		$scope.toggleView=true;
 	}
+	$scope.print=function(){
+		window.print();
+	}
+	$scope.email=function(){
+		alert("我的邮箱:50671234@qq.com");
+	}
 	//更改地址
 	$scope.linkIndex=0;
 	$scope.link=["http://www.jingyingba.com/","https://nibabahao.github.io/lifeFamily/","https://nibabahao.github.io/heartFish/",""];
