@@ -366,11 +366,11 @@ html,body{
 }
 /***angular会变化********/
 .right .content{
-	-webkit-transition:  left .5s;
-	-o-transition:  left .5s;
-	-moz-transition:  left .5s;
-	-ms-transition:  left .5s;
-	transition:  left .5s;
+	-webkit-transition:  left .5s cubic-bezier(0,1.83,.69,.75);
+	-o-transition:  left .5s cubic-bezier(0,1.83,.69,.75);
+	-moz-transition:  left .5s cubic-bezier(0,1.83,.69,.75);
+	-ms-transition:  left .5s cubic-bezier(0,1.83,.69,.75);
+	transition:  left .5s cubic-bezier(0,1.83,.69,.75);
 }
 .right .webView .view{
 	position: relative;
@@ -413,11 +413,11 @@ html,body{
 	left: 0;
 	width: 400%;
 	height: 100%;
-	-webkit-transition: left .5s;
-	-o-transition: left .5s;
-	transition: left .5s;
-	-moz-transition: left .5s;
-	-ms-transition: left .5s;
+	-webkit-transition: left .5s cubic-bezier(0,1.83,.69,.75);
+	-o-transition: left .5s cubic-bezier(0,1.83,.69,.75);
+	transition: left .5s cubic-bezier(0,1.83,.69,.75);
+	-moz-transition: left .5s cubic-bezier(0,1.83,.69,.75);
+	-ms-transition: left .5s cubic-bezier(0,1.83,.69,.75);
 }
 #inner .slide{
 	width: 25%;
