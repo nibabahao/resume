@@ -335,7 +335,7 @@ html,body{
 }
 /**********作品展示页导航栏********/
 .right .webView .navPrograme{
-	background-color: #2EA7E0;
+	background-color: #6ecadc ;
 }
 .right .webView .navPrograme li{
 	float: left;
@@ -346,6 +346,7 @@ html,body{
 	text-align: center;
 	font-size:1.4rem;
 }
+.right .webView .navPrograme li a{color:#FFF;}
 .right .webView .navPrograme .long{
 	width:30%;
 }
@@ -451,12 +452,12 @@ html,body{
 	cursor: pointer;
 	margin:5% 0;
 }
-#inner .slider2 img{
+.slider2 #inner .slide img{
 	float: left;
 	width:40%;
 	margin:0 10%;
 }
-#inner .slider2{
+.slider2 #inner .slide{
 	overflow-y:scroll;
 }
 #inner dl{

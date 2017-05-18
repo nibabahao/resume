@@ -2,7 +2,7 @@
 
 //图片预加载
 window.onload=function(){
-var picSrc=["./img/home1.png","./img/list.png","./img/details.png","./img/login.png","./img/main.png",
+var picSrc=["./img/pcHome.jpg","./img/pcList.png","./img/pcSearch.jpg","./img/pcSubject.jpg","./img/main.png",
 "./img/shopping.png","./img/mine.png","./img/canvas.png","./img/nodejs.png","./img/php.png","./img/php2.png"]
 
 function imgLoad(){
@@ -44,7 +44,8 @@ myapp.controller("myCtrl",function($scope){
 	}
 	//更改地址
 	$scope.linkIndex=0;
-	$scope.link=["http://www.jingyingba.com/","https://nibabahao.github.io/lifeFamily/","https://nibabahao.github.io/heartFish/",""];
+	$scope.navBar=[{href:"#/",content:"PC端项目",class:""},{href:"#/mobile",content:"移动端项目",class:""},{href:"#/h5",content:"网站后台系统",class:"long"},{href:"#/other",content:"angular项目",class:"long"}];
+	$scope.link=["http://www.clifford-hospital.org/","https://nibabahao.github.io/lifeFamily/","https://nibabahao.github.io/heartFish/",""];
 	$scope.address=function(index){
 		$scope.linkIndex=index;
 		console.log(index);
@@ -70,38 +71,74 @@ myapp.config(function($routeProvider){
 		controller:"otherCtrl"
 	})	
 });
+/***********自定义指令******************/
+myapp.directive("carousel",function(){
+	return {
+		scope:false,
+		restrict:"E",
+		transclude:true,
+		template:'<div id="inner" class="clearfix" ng-style="myObj">'
+				  +'<div class="slide clearfix" ng-repeat="list in lists"  ng-swipe-left="next()" ng-swipe-right="last()">'
+				  +'<img src="{{list.src}}">'
+				  +'<dl>'
+				  +'<dt>{{list.title}}</dt>'
+				  +'<dd ng-repeat="con in data[activeIndex]">'
+				  +'<h4>{{con.title}}</h4>'
+				  +'<p>{{con.details}}</p>'
+				  +'</dd>'								
+			      +'</dl>'
+				  +'</div>'
+	              +'</div>'
+	              +'<div class="pagination">'
+		          +'<span ng-repeat="list in lists" ng-class="{active:$index==activeIndex}" ng-click="tab($index)"></span>'
+	              +'</div>',          
+		link:function(scope,elem,attr){
+			scope.tab=function(index){
+				scope.activeIndex=index;
+				scope.move();
+			}
+			scope.next=function(){
+				scope.activeIndex++;
+				if(scope.activeIndex>scope.lists.length-1){
+					scope.activeIndex=scope.lists.length-1;
+				}
+				scope.move();
+			}
+			scope.last=function(){
+				scope.activeIndex--;
+				if(scope.activeIndex<0){
+					scope.activeIndex=0;
+				}
+				scope.move();
+			}	
+			scope.move=function(){
+				scope.myObj = {
+					left:-scope.activeIndex*100+'%'
+		    	}	
+			}
+		}
+	}
+})
+
+
 
 /******第一页控制器****/
 myapp.controller("indexCtrl",function($scope){
 	/****创建内容数据****/
-	$scope.lists=[{"src":"./img/home1.png","title":"主页简介"},{"src":"./img/list.png","title":"列表页简介"},{"src":"./img/details.png","title":"详情页简介"},{"src":"./img/login.png","title":"登陆页简介"}];
+	$scope.lists=[{"src":"./img/pcHome.jpg","title":"主页简介"},{"src":"./img/pcList.jpg","title":"列表页简介"},{"src":"./img/pcSearch.jpg","title":"医生搜索页"},{"src":"./img/pcSubject.jpg","title":"科室专题页"}];
 	$scope.content0=[{"title":"页面布局","details":"采用固定像素分上中下静态布局，而顶部导航栏和底部友情链接都作为公共部分提取以供不同页面调用"},
-	{"title":"轮播图效果","details":"利用jquery里面的动画函数fadeIn和fadeOut配合，实现图片切换时的淡入淡出效果"},{"title":"回顶部按钮",
-"details":"当鼠标移入右下角的图标用hover效果会出现大图，利用jquery的anmiate改变页面的scrollTo而实现带有动画效果的返回顶部同时也兼容firefox"}];
-	$scope.content1=[{"title":"中间课程内容","details":"利用ajax调用后台接口api处理json格式数据，再将数据对应填充到页面上展示出来"},
-	{"title":"分类导航部分","details":"将ajax返回的数据内容按照导航栏标题的分类并保存在数组中，当tab切换时在页面上只显示对应内容，好处只用一次ajax请求，所以只加载一次，减少http请求次数"},{"title":"页面和总共数量",
-"details":"会根据返回来数据的条数生成，限制每页只显示20条"}];
-	$scope.content2=[{"title":"内容替换","details":"根据列表页传输过来的id判断再从数据库中查找对应id数据填充上去"},
-	{"title":"热销课程","details":"利用PHP操作数据库查找销量最好的排序后引入页面"}];
-	$scope.content3=[{"title":"表单验证","details":"在数据传到后台时先在用正则把内容判断检测"},
+	{"title":"轮播图效果","details":"利用isScroll插件实现图片切换时的淡入淡出效果并使分页器带动画效果"},{"title":"图标分类",
+"details":"当鼠标移入下面三个大图标时会有视觉效果比较好的css3动画效果"}];
+	$scope.content1=[
+	{"title":"列表内容部分","details":"写好静态模版用PHP编写成动态模版"},{"title":"列表展开特效",
+"details":"列表展开都带有伸缩动画加强体验"}];
+	$scope.content2=[{"title":"医生搜索","details":"根据输入框输入内容用ajax传到后台后跳转到搜索页"},
+	{"title":"科室医生分类","details":"用Tab切换加上淡入淡出动画显示各个科室"}];
+	$scope.content3=[{"title":"轮播图","details":"用JQ写出淡入淡出效果外加css3使页面更生动"},
 	{"title":"后台数据交互","details":"利用ajax调用后台验证账号密码接口，根据返回信息判断登录是否成功 "}];
 	$scope.data=[$scope.content0,$scope.content1,$scope.content2,$scope.content3];
 	$scope.activeIndex=0;//控制内容页面的标记位置
-	$scope.tab=function(index){
-		$scope.activeIndex=index;
-	}
-	$scope.next=function(){
-		$scope.activeIndex++;
-		if($scope.activeIndex>$scope.lists.length-1){
-			$scope.activeIndex=$scope.lists.length-1;
-		}
-	}
-	$scope.last=function(){
-		$scope.activeIndex--;
-		if($scope.activeIndex<0){
-			$scope.activeIndex=0;
-		}
-	}	
+	
 });
 myapp.controller("mobileCtrl",function($scope){
 	$scope.lists=[{"src":"./img/main.png","title":"主页简介"},{"src":"./img/shopping.png","title":"购物页简介"},{"src":"./img/mine.png","title":"我的页面简介"}];
@@ -114,22 +151,7 @@ $scope.content1=[{"title":"遮盖层","details":"开始以蒙层和弹窗的方�
 "details":"采用计时器设定好限时时间来"}];		
 $scope.content2=[{"title":"我的首页","details":"每个li按钮都对应不同页面以便用户修改个人信息"},
 	{"title":"登录","details":"在跳到我的页面之前，会有一个登录注册页面"}];		
-$scope.data=[$scope.content0,$scope.content1,$scope.content2];
-	$scope.tab=function(index){
-		$scope.activeIndex=index;
-	}
-	$scope.next=function(){
-		$scope.activeIndex++;
-		if($scope.activeIndex>$scope.lists.length-1){
-			$scope.activeIndex=$scope.lists.length-1;
-		}
-	}
-	$scope.last=function(){
-		$scope.activeIndex--;
-		if($scope.activeIndex<0){
-			$scope.activeIndex=0;
-		}
-	}	
+$scope.data=[$scope.content0,$scope.content1,$scope.content2];	
 });
 myapp.controller("otherCtrl",function($scope){
 	$scope.lists=[{"src":"./img/nodejs.png","title":"nodejs搭建页面"},{"src":"./img/php.png","title":"php搭建列表页"},{"src":"./img/php2.png","title":"php搭建详细页"}];
@@ -141,19 +163,5 @@ $scope.content1=[{"title":"PHP解析接口","details":"用file_get_contents获�
 	{"title":"数据填充","details":"在模板页面上从数据库里填充数据完成列表页面"}];		
 $scope.content2=[{"title":"详情页的填充","details":"根据列表页传输过来的ID再从数据库找到对应ID的数据填充到页面上"}];		
 $scope.data=[$scope.content0,$scope.content1,$scope.content2];	
-	$scope.tab=function(index){
-		$scope.activeIndex=index;
-	}
-	$scope.next=function(){
-		$scope.activeIndex++;
-		if($scope.activeIndex>$scope.lists.length-1){
-			$scope.activeIndex=$scope.lists.length-1;
-		}
-	}
-	$scope.last=function(){
-		$scope.activeIndex--;
-		if($scope.activeIndex<0){
-			$scope.activeIndex=0;
-		}
-	}	
+	
 });

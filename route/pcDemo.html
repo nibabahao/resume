@@ -1,17 +1,3 @@
 <div style="">
-	<div id="inner" class="clearfix" ng-style="{left:-activeIndex*100+'%'}">
-		<div class="slide clearfix" ng-repeat="list in lists"  ng-swipe-left="next()" ng-swipe-right="last()">
-			<img src="{{list.src}}">
-			<dl>
-				<dt>{{list.title}}</dt>
-				<dd ng-repeat=" con in data[activeIndex]">
-					<h4>{{con.title}}</h4>
-					<p>{{con.details}}</p>
-				</dd>									
-			</dl>
-		</div>
-	</div>
-	<div class="pagination">
-		<span ng-repeat="list in lists" ng-class="{active:$index==activeIndex}" ng-click="tab($index)"></span>
-	</div>
+	<carousel></carousel>
 </div>
