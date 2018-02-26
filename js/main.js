@@ -2,8 +2,8 @@
 
 //图片预加载
 window.onload=function(){
-var picSrc=["./img/pcHome.jpg","./img/pcList.png","./img/pcSearch.jpg","./img/pcSubject.jpg","./img/main.png",
-"./img/shopping.png","./img/mine.png","./img/canvas.png","./img/nodejs.png","./img/php.png","./img/php2.png"]
+var picSrc=["./img/pcHome.jpg","./img/pcList.jpg","./img/pcSearch.jpg","./img/pcSubject.jpg","./img/main.jpg",
+"./img/park.jpg","./img/doctor.jpg","./img/canvas.png","./img/appointment.jpg","./img/person.jpg","./img/new.jpg"]
 
 function imgLoad(){
 	var count=0;
@@ -44,8 +44,8 @@ myapp.controller("myCtrl",function($scope){
 	}
 	//更改地址
 	$scope.linkIndex=0;
-	$scope.navBar=[{href:"#/",content:"PC端项目",class:""},{href:"#/mobile",content:"移动端项目",class:""},{href:"#/h5",content:"网站后台系统",class:"long"},{href:"#/other",content:"angular项目",class:"long"}];
-	$scope.link=["http://www.clifford-hospital.org/","https://nibabahao.github.io/lifeFamily/","https://nibabahao.github.io/heartFish/",""];
+	$scope.navBar=[{href:"#/",content:"祈福医院官网",class:""},{href:"#/mobile",content:"手机官网",class:""},{href:"#/h5",content:"小游戏",class:"long"},{href:"#/other",content:"医院公众号",class:"long"}];
+	$scope.link=["http://www.clifford-hospital.org/","http://m.clifford-hospital.org/","https://nibabahao.github.io/heartFish/","公众号搜索广东祈福医院关注"];
 	$scope.address=function(index){
 		$scope.linkIndex=index;
 		console.log(index);
@@ -141,27 +141,24 @@ myapp.controller("indexCtrl",function($scope){
 	
 });
 myapp.controller("mobileCtrl",function($scope){
-	$scope.lists=[{"src":"./img/main.png","title":"主页简介"},{"src":"./img/shopping.png","title":"购物页简介"},{"src":"./img/mine.png","title":"我的页面简介"}];
+	$scope.lists=[{"src":"./img/main.jpg","title":"主页简介"},{"src":"./img/new.jpg","title":"医院动态"},{"src":"./img/doctor.jpg","title":"医生页"}];
 	$scope.activeIndex=0;
-$scope.content0=[{"title":"整体布局","details":"用百分比布局以便适应不同手机的分辨率"},
-	{"title":"轮播图效果","details":"由于手机上性能问题，用原生和jq写出来动画效果会不流畅，所有可以用swiper.js减少性能消耗优化动画"},{"title":"公用部分",
-"details":"，头部和底部都为公用部分提取，都采用固定定位定格在头和尾部"}];
-$scope.content1=[{"title":"遮盖层","details":"开始以蒙层和弹窗的方式引导用户现在最新的优惠，触屏蒙层部分弹窗消失"},
-	{"title":"内容详情","details":"内容分两部分，介绍商品用png压缩图片体积少不失真加文字内容展示，评价页用tab切换来显示不同部分，减少页面嵌套"},{"title":"商品限时",
-"details":"采用计时器设定好限时时间来"}];		
-$scope.content2=[{"title":"我的首页","details":"每个li按钮都对应不同页面以便用户修改个人信息"},
-	{"title":"登录","details":"在跳到我的页面之前，会有一个登录注册页面"}];		
+$scope.content0=[{"title":"整体布局","details":"用rem布局整体适应所有手机分辨率"},
+	{"title":"轮播图效果","details":"利用css3位移动画自己封装的轮播图插件"},{"title":"公用部分",
+"details":"头部和底部都为公用部分提取，头部都加入css3动画效果提高用户体验"}];
+$scope.content1=[{"title":"导航栏","details":"导航栏是一个tab点击切换，利用isscroll插件内容切换时带有动画效果"},
+	{"title":"内容详情","details":"列表页每次加载10条新闻，利用滚动加载每页内容"}];		
+$scope.content2=[{"title":"医生加载","details":"根据不同科室加载所属科室的医生"},
+	{"title":"医生排班","details":"根据后台信息显示医生的排班信息"}];		
 $scope.data=[$scope.content0,$scope.content1,$scope.content2];	
 });
 myapp.controller("otherCtrl",function($scope){
-	$scope.lists=[{"src":"./img/nodejs.png","title":"nodejs搭建页面"},{"src":"./img/php.png","title":"php搭建列表页"},{"src":"./img/php2.png","title":"php搭建详细页"}];
+	$scope.lists=[{"src":"./img/park.jpg","title":"停车缴费"},{"src":"./img/person.jpg","title":"个人中心"},{"src":"./img/appointment.jpg","title":"排班预约"}];
 	$scope.activeIndex=0;
-$scope.content0=[{"title":"服务器搭建","details":"用nodeJS中的express快速搭建整个应用"},
-	{"title":"jade模板","details":"设置jade模板用来接受接口的数据和逐一填充上去"},{"title":"调用接口",
-"details":"利用request模块去接受网络上豆瓣的接口并保存豆瓣的数据"}];
-$scope.content1=[{"title":"PHP解析接口","details":"用file_get_contents获取豆瓣的接口变解析成json对象后导入数据库"},
-	{"title":"数据填充","details":"在模板页面上从数据库里填充数据完成列表页面"}];		
-$scope.content2=[{"title":"详情页的填充","details":"根据列表页传输过来的ID再从数据库找到对应ID的数据填充到页面上"}];		
+$scope.content0=[{"title":"车牌号码记录","details":"利用本地缓存localStroage记录最近一次付款的车牌号码"},
+	{"title":"数据传输","details":"把车牌号传到支付页内调用微信支付接口"}];
+$scope.content1=[{"title":"个人中心","details":"个人中心提供所有关于医院就诊的相关信息，在绑定就诊卡用扫一扫功能识别就诊卡号来绑定"}];		
+$scope.content2=[{"title":"医生排班预约","details":"医生排班根据不同科室分类医生预约，用isscroll做滚动效果"}];		
 $scope.data=[$scope.content0,$scope.content1,$scope.content2];	
 	
 });
